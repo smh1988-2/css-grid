@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  background-color: #1d1d1d;
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"
+    "six";
+  padding: 2rem;
+}
+
+@media only screen and (min-width: 1000px) {
+    main {
+        display: grid;
+        gap: 1rem;
+        grid-template-areas:
+          "one two three four"
+          "five five three six";
+        padding: 2rem;
+      }
+}
+
+.benefit-card {
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.vps {
+  grid-area: one;
+  background-color: #569bf5;
+}
+.security {
+  grid-area: two;
+  background-color: #ed737b;
+}
+.products {
+  grid-area: three;
+  background-color: #5eceba;
+}
+.pro-user {
+  grid-area: four;
+  background-color: #f4c9a0;
+}
+.payment-methods {
+  grid-area: five;
+  background-color: #f8d77a;
+}
+.domains {
+  grid-area: six;
+  background-color: #815dee;
+}
+
+/* blue: 569BF5
+red: ED737B
+green: 5ECEBA
+beige: F4C9A0
+yellow: F8D77A
+purple: 815DEE */
