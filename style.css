@@ -1,9 +1,3 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
   display: flex;
   align-items: center;
@@ -11,35 +5,65 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1.3rem;
   background-color: #1d1d1d;
-  height: 100vh;
 }
 
 main {
   display: grid;
   gap: 1rem;
   grid-template-areas:
-    "one"
-    "two"
-    "three"
-    "four"
-    "five"
-    "six";
+    "vps"
+    "security"
+    "products"
+    "pro"
+    "payment"
+    "domains";
+    grid-auto-rows: 1fr;
   padding: 2rem;
   width: 100%;
-  height: 50vh;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 750px) {
+  
+    main {
+        grid-template-areas:
+        "vps products"
+         "pro products"
+        "domains domains"
+        "payment security";
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+
+@media only screen and (min-width: 1200px) {
+  body {
+    height: 100vh;
+  }
+
   main {
     display: grid;
     gap: 1rem;
     grid-template-areas:
-      "one two three three four"
-      "five five three three six";
+      "vps security products products pro"
+      "payment payment products products domains";
     grid-template-columns: repeat(5, minmax(0, 1fr));
     padding: 2rem;
+    height: 50vh;
   }
 }
+
+@media only screen and (min-width: 2000px) {
+    body {
+      height: 100vh;
+    }
+  
+    main {
+      grid-template-areas:
+        "vps security products pro payment domains";
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  }
+
 
 .benefit-card {
   border-radius: 10px;
@@ -51,33 +75,26 @@ main {
 }
 
 .vps {
-  grid-area: one;
+  grid-area: vps;
   background-color: #569bf5;
 }
 .security {
-  grid-area: two;
+  grid-area: security;
   background-color: #ed737b;
 }
 .products {
-  grid-area: three;
+  grid-area: products;
   background-color: #5eceba;
 }
 .pro-user {
-  grid-area: four;
+  grid-area: pro;
   background-color: #f4c9a0;
 }
 .payment-methods {
-  grid-area: five;
+  grid-area: payment;
   background-color: #f8d77a;
 }
 .domains {
-  grid-area: six;
+  grid-area: domains;
   background-color: #815dee;
 }
-
-/* blue: 569BF5
-red: ED737B
-green: 5ECEBA
-beige: F4C9A0
-yellow: F8D77A
-purple: 815DEE */
