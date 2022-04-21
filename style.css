@@ -5,10 +5,13 @@
 }
 
 body {
+  display: flex;
+  align-items: center;
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-size: 1.3rem;
   background-color: #1d1d1d;
+  height: 100vh;
 }
 
 main {
@@ -22,17 +25,20 @@ main {
     "five"
     "six";
   padding: 2rem;
+  width: 100%;
+  height: 50vh;
 }
 
 @media only screen and (min-width: 1000px) {
-    main {
-        display: grid;
-        gap: 1rem;
-        grid-template-areas:
-          "one two three four"
-          "five five three six";
-        padding: 2rem;
-      }
+  main {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+      "one two three three four"
+      "five five three three six";
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    padding: 2rem;
+  }
 }
 
 .benefit-card {
@@ -40,7 +46,8 @@ main {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center;
+  text-align: center;
+  padding: 1rem;
 }
 
 .vps {
